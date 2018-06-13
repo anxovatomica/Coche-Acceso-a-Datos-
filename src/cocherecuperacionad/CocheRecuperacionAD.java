@@ -52,7 +52,7 @@ public class CocheRecuperacionAD {
                 arrayRenault.add(linea);
                 
             }
-            for(int i = 0; i <= arrayRenault.size(); i++){
+            for(int i = 0; i < arrayRenault.size(); i++){
                 System.out.println(arrayRenault.get(i));
             }
             String paquete = "";
