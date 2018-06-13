@@ -26,8 +26,10 @@ public class CocheRecuperacionAD {
         File archivo2 = null;
         File email = null;
         FileReader fr = null;
-        ArrayList<String> ids = new ArrayList<>();
-        ArrayList<String> pak = new ArrayList<>();
+        
+        ArrayList<String> arrayRenault = new ArrayList<>();
+        ArrayList<String> arraySeat = new ArrayList<>();
+        
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             //path archivos Marcel
@@ -42,28 +44,33 @@ public class CocheRecuperacionAD {
             if (!renault.exists()) {
                 System.out.println("el archivo no existe");
             }
-            
+            //Leemos archivo RENAULT
             String linea;
             fr = new FileReader(renault);
             br = new BufferedReader(fr);
             while ((linea = br.readLine()) != null) {
-                ids.add(linea);
+                arrayRenault.add(linea);
+                
             }
-            
+            for(int i = 0; i <= arrayRenault.size(); i++){
+                System.out.println(arrayRenault.get(i));
+            }
             String paquete = "";
             String paquete2 = "";
-
+/*
             //System.out.print("EL VECTOR ES : \n ");//MOSTRAR LOS DATOS DEL ARREGLO
-            for (int j = 0; j < ids.size(); j++) {
-                paquete = ids.get(j);
+            for (int j = 0; j < arrayRenault.size(); j++) {
+                paquete = arrayRenault.get(j);
                 linea = paquete.substring(0, 6);
                 if (linea.equals(args[0])) {
                     System.out.print(paquete + "\n");
                     paquete2 = paquete;
                 }
             }
+*/
 
-            String[] pakage = paquete2.split(";");
+
+            /*String[] pakage = paquete2.split(";");
 
             String[] pakagesec = pakage[1].split(",");
             if (pakagesec.length == 0) {
@@ -74,28 +81,29 @@ public class CocheRecuperacionAD {
             archivo2 = new File("C:\\archivo1.txt");
             if (!archivo2.exists()) {
                 System.out.println("el archivo no existe");
-            }
+            }*/
+            /*
             fr = new FileReader(archivo2);//aqui lo leemos y lo pasamos a FileReader
             br = new BufferedReader(fr);
             String linea2;
             while ((linea2 = br.readLine()) != null) {
-                pak.add(linea2);
-            }
+                arraySeat.add(linea2);
+            }*/
             //obtenemos el segundo renault ***************************
-            for (int c = 0; c < pakagesec.length; c++) {
+           /* for (int c = 0; c < pakagesec.length; c++) {
 
                 String[] pakage2 = null;
-                for (int j = 0; j < pak.size(); j++) {
-                    pakage2 = pak.get(j).split(";");
+                for (int j = 0; j < arraySeat.size(); j++) {
+                    pakage2 = arraySeat.get(j).split(";");
                     if (pakage2[0].equals(pakagesec[c])) {
-                        linea2 = pak.get(j);
+                        linea2 = arraySeat.get(j);
                     }
                 }
                 if (linea == null) {
                     System.out.println("el paquete no existe");
                 }
                 pakage2 = linea2.split(";");
-//************************************** escritura*******************************
+//************************************** escritura*******************************/
                 /*FileWriter fw = new FileWriter("emailMainteiner" + c + " .txt");
 
                 String strs[] = {"From: correo@gmail.com", "To: " + pakage2[2], "Dear: " + pakage2[1], "You have a new bug: ", pakage2[0] + " RC bug number #" + pakage[0], "Please, fix it as soon as possible.", "Cheers."};
@@ -104,9 +112,9 @@ public class CocheRecuperacionAD {
                     fw.write(strs[i] + "\n");
                 }
                 fw.close();*/
-            }
+          //  }
 
-        }//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY
+        }//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY//FIN DEL TRY
         catch (Exception e) {
             System.out.println(e);
         }
